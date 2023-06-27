@@ -1,5 +1,6 @@
 #include <stdio.h>
 void guardarNombresArchivo(FILE *archivo, char id[], char nombre[]);
+void leerNombresArchivo(FILE *archivo);
 
 int main (int argc, char *argv[]) {
 
@@ -15,6 +16,13 @@ int main (int argc, char *argv[]) {
         guardarNombresArchivo(archivo, nombres[i][0],nombres[i][1]);
     }
 
+    rewind(archivo);
+
+     for (int i = 0; i < 5; i++)
+    {
+        leerNombresArchivo(archivo);
+    }
+
     fclose(archivo);
     
 
@@ -24,4 +32,12 @@ int main (int argc, char *argv[]) {
 
 void guardarNombresArchivo(FILE *archivo, char id[], char nombre[]){
     fprintf(archivo, "%s %s\n",id,nombre);
+}
+
+void leerNombresArchivo(FILE *archivo){
+    char id[50];
+    char nombre[50];
+    fscanf(archivo,"%s %s",&id,&nombre);
+    printf("%s\n",id);
+    printf("%s\n",nombre);
 }

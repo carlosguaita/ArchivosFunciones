@@ -16,17 +16,20 @@ int main(int argc, char *argv[])
     {
         printf("Lista todos los datos en el archivo\n");
         leerNombresArchivo(nombreArchivo);
+        
         printf("Encuentra un registro en el archivo en funcion del ID\n");
         posicion = buscarNombrePorId(nombreArchivo,"a05");
         printf("reemplaza el nombre y edad en funcion del ID\n");
         reemplazarNombreEdadPorId(nombreArchivo,posicion,"Carlos",34);
         printf("Lista los nuevos datos los datos en el archivo\n");
         leerNombresArchivo(nombreArchivo);
+
         printf("Encuentra un registro en el archivo en funcion del ID\n");
         posicion = buscarNombrePorId(nombreArchivo,"a02");
         printf("Cambiar estado de registro\n");
         cambiarEstado(nombreArchivo,posicion,0);
         leerNombresArchivo(nombreArchivo);
+        
         printf("Ingresar registro\n");
         ingresarRegistro(nombreArchivo,"a06", "Esteban", 52.00, 1);
         leerNombresArchivo(nombreArchivo);
